@@ -1,4 +1,7 @@
 # software-center
+Тестовое задание для вакансии Frontend-разработчик в компании "Центр программного обеспечения".
+
+Использован стек технологий: Vue3 (Option Api), Vue Router, Scss, Html, axios.
 
 ## Project setup
 ```
