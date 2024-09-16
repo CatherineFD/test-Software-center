@@ -1,6 +1,12 @@
 <script>
 export default {
-  name: "Header"
+  name: "Header",
+  props: {
+    totalCar: {
+      type: Number,
+      default: 0
+    }
+  }
 }
 </script>
 
@@ -9,7 +15,7 @@ export default {
     <div class="header__title">
       <h1>Vechicles</h1>
 
-      <span class="header__counter">256</span>
+      <span class="header__counter">{{ totalCar }}</span>
     </div>
 
     <div class="setting">
@@ -33,7 +39,7 @@ export default {
 
 <style scoped lang="scss">
 .header {
-  width: 100%;
+
   height: 100%;
   padding: 30px 30px 26px;
   border-bottom: 1px solid rgba(228, 228, 228, 1);
@@ -126,6 +132,19 @@ export default {
     &__arrow {
       display: flex;
       align-items: center;
+    }
+  }
+}
+
+@media (max-width: 948px) {
+  .header {
+    padding: 10px 15px;
+
+    &__title {
+      h1 {
+        font-size: 24px;
+        line-height: 28px;
+      }
     }
   }
 }

@@ -16,28 +16,24 @@ export default {
   },
   computed: {
     isEnableNext() {
-      if (this.propsCurrentPage < this.propsTotalPage) {
-        return true
-      }
+      return this.propsCurrentPage < this.propsTotalPage
     },
     isEnablePrev() {
-      if (this.propsCurrentPage > 1) {
-        return true
-      }
+      return this.propsCurrentPage > 1
     }
   }
 }
 </script>
 
 <template>
-<div class="navigation">
-  <button :disabled="!isEnablePrev" class="navigation__btn" :class="{'disable': !isEnablePrev}"><img src="@/assets/icon/prev-arrow.svg" alt="prev" @click="$emit('next-page', propsCurrentPage-1)"></button>
+  <div class="navigation">
+  <button :disabled="!isEnablePrev" class="navigation__btn" :class="{'disable': !isEnablePrev}" @click="$emit('next-page', propsCurrentPage-1)"><img src="@/assets/icon/prev-arrow.svg" alt="prev"></button>
 
   <span class="navigation__number">{{propsCurrentPage}}</span>
   of
 
   <span class="navigation__number">{{propsTotalPage}}</span>
-  <button class="navigation__btn" :disabled="!isEnableNext" :class="{'disable': !isEnableNext}"><img src="@/assets/icon/next-arrow.svg" alt="next" @click="$emit('next-page', propsCurrentPage+1)"></button>
+  <button class="navigation__btn" :disabled="!isEnableNext" :class="{'disable': !isEnableNext}" @click="$emit('next-page', propsCurrentPage+1)"><img src="@/assets/icon/next-arrow.svg" alt="next"></button>
 </div>
 </template>
 

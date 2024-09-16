@@ -96,4 +96,18 @@ export default {
     margin-right: 16px;
   }
 }
+
+@media (max-width: 1170px) {
+  .block {
+    flex-direction: column;
+  }
+}
+
+@media(max-width: 983px) {
+  .block__search {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
 </style>

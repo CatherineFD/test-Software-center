@@ -1,5 +1,6 @@
 <script>
 import PerformedCount from "@/components/UI/PerformedCount.vue";
+import noImage from "@/assets/no-image.png";
 export default {
   name: "CardCard",
   components: {
@@ -14,14 +15,19 @@ export default {
   computed: {
     numberDay() {
       const now = Date.now();
-
       const timestampInMs = this.car.created_at * 1000;
-
       const diffInMs = now - timestampInMs;
-
       const diffInDays = Math.floor(diffInMs / (1000 * 60 * 60 * 24));
 
       return diffInDays;
+    },
+    srcImage () {
+      console.log(this.car.preview)
+      if (this.car.preview) {
+        return this.car.preview
+      } else {
+        return noImage;
+      }
     }
   }
 }
@@ -32,7 +38,7 @@ export default {
   <div class="card__details"><img src="@/assets/icon/details.svg" alt="details"></div>
 
   <div class="card__info">
-    <img :src="car.preview" alt="car">
+    <img :src="srcImage" alt="car">
 
     <div class="card__info__text">
       <p class="card__info__text__title">{{car.vehicle_name}} {{car.model}}</p>
@@ -57,7 +63,7 @@ export default {
   padding: 10px 20px 20px;
 
   box-sizing: border-box;
-  width: 350px;
+  width: 300px;
 
   &__details {
     display: flex;
@@ -74,6 +80,7 @@ export default {
     img {
       width: 85%;
       max-width: 290px;
+
     }
 
     &__text {
@@ -114,6 +121,24 @@ export default {
     text-align: right;
     color: rgba(41, 49, 72, 0.6);
     margin: 0;
+  }
+}
+
+@media(max-width: 1275px) {
+  .card {
+    width: 250px;
+  }
+}
+
+@media(max-width: 1275px) {
+  .card {
+    width: 200px;
+  }
+}
+
+@media(max-width: 950px) {
+  .card {
+    width: 250px;
   }
 }
 </style>

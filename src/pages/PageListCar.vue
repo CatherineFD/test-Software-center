@@ -45,6 +45,7 @@ export default {
     },
     changeSearch(value) {
       this.search = value;
+      this.currentPage = 1;
       this.getListCars();
     },
     changePage(value) {
@@ -60,7 +61,7 @@ export default {
 
 <template>
   <div class="page">
-    <Header/>
+    <Header :total-car="totalCars"/>
     <SettingPage :propsCurrentNumber="currentCount" @search="changeSearch" @change-count="changeCount"/>
 
 
