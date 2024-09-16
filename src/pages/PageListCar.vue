@@ -1,14 +1,16 @@
 <script>
 import api from "@/api/index";
-import Menu from "@/components/UI/Menu.vue"
 import Header from "@/components/UI/Header.vue";
+import SettingPage from "@/components/PageListCar/SettingPage.vue";
 export default {
   name: "PageListCar",
   components: {
-    Menu, Header
+    Header, SettingPage
   },
   data() {
     return {
+      search: '',
+      currentCount: 9,
       cars: []
     }
   },
@@ -16,11 +18,17 @@ export default {
     getListCars() {
       api.getListCars()
         .then((response) => {
-          this.cars = response.data
+          this.cars = response.data.data
         })
           .catch(e => {
             console.log(e)
           })
+    },
+    changeCount(value) {
+      this.currentCount = value
+    },
+    changeSearch(value) {
+      this.search = value
     }
   },
   mounted() {
@@ -31,8 +39,9 @@ export default {
 
 <template>
   <div class="page">
-
     <Header/>
+    <SettingPage :propsCurrentNumber="currentCount" @search="changeSearch" @change-count="changeCount"/>
+    
   </div>
 
 </template>
@@ -40,6 +49,7 @@ export default {
 <style scoped lang="scss">
 .page {
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
 
 }
