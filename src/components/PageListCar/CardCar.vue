@@ -22,7 +22,6 @@ export default {
       return diffInDays;
     },
     srcImage () {
-      console.log(this.car.preview)
       if (this.car.preview) {
         return this.car.preview
       } else {
@@ -63,7 +62,7 @@ export default {
   padding: 10px 20px 20px;
 
   box-sizing: border-box;
-  width: 300px;
+  width: 350px;
 
   &__details {
     display: flex;
@@ -80,7 +79,6 @@ export default {
     img {
       width: 85%;
       max-width: 290px;
-
     }
 
     &__text {
@@ -121,24 +119,6 @@ export default {
     text-align: right;
     color: rgba(41, 49, 72, 0.6);
     margin: 0;
-  }
-}
-
-@media(max-width: 1275px) {
-  .card {
-    width: 250px;
-  }
-}
-
-@media(max-width: 1275px) {
-  .card {
-    width: 200px;
-  }
-}
-
-@media(max-width: 950px) {
-  .card {
-    width: 250px;
   }
 }
 </style>
