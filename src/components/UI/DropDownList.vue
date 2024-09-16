@@ -75,6 +75,7 @@ export default {
       padding: 9px 16px;
       margin-top: 3px;
       transition: background-color 0.3s ease;
+      background-color: #fff;
 
       &:hover {
         background-color: rgb(213, 210, 210);

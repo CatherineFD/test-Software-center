@@ -11,6 +11,7 @@ export default {
     getListCars(search = '2323', perPage = 9, page = 1) {
         return axiosApi.get('/cars-test', {
             params: {
+                search: search,
                 per_page: perPage,
                 page: page
             }

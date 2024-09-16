@@ -1,6 +1,6 @@
 <template>
   <div class="app">
-    <Menu/>
+    <Menu class="menus"/>
 
     <div class="content">
       <router-view/>
@@ -30,6 +30,14 @@ body {
 
 .app {
   display: flex;
+  min-height: 100vh;
+  height: 100%;
+
+}
+
+.menus {
+  width: 256px;
+  background-color: rgba(40, 40, 40, 1);
 }
 
 .content {

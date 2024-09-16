@@ -5,45 +5,48 @@ export default {
 </script>
 
 <template>
-  <div class="block">
-    <div class="block__title">
-      Demo Test
-    </div>
+  <div >
+    <div class="block">
+      <div class="block__title">
+        Demo Test
+      </div>
 
-    <div class="menu">
-      <ul class="menu__list">
-        <li class="menu__item">
-          <img src="@/assets/icon/profile.svg" alt="profile">
+      <div class="menu">
+        <ul class="menu__list">
+          <li class="menu__item">
+            <img src="@/assets/icon/profile.svg" alt="profile">
 
-          <span>Profile</span>
-        </li>
+            <span>Profile</span>
+          </li>
 
-        <li class="menu__item">
-          <img src="@/assets/icon/vechicles.svg" alt="vechicles">
+          <li class="menu__item">
+            <img src="@/assets/icon/vechicles.svg" alt="vechicles">
 
-          <span>Vechicles</span>
-        </li>
+            <span>Vechicles</span>
+          </li>
 
-        <li class="menu__item">
-          <img src="@/assets/icon/setting.svg" alt="setting">
+          <li class="menu__item">
+            <img src="@/assets/icon/setting.svg" alt="setting">
 
-          <span>Setting</span>
-        </li>
-      </ul>
+            <span>Setting</span>
+          </li>
+        </ul>
 
-    </div>
+      </div>
 
-    <div class="block__background">
-      <img src="@/assets/menu-background.svg" alt="">
+      <div class="block__background">
+        <img src="@/assets/menu-background.svg" alt="">
+      </div>
     </div>
   </div>
 </template>
 
 <style scoped lang="scss">
 .block {
-  width: 20%;
+  width: 256px;
   background-color: rgba(40, 40, 40, 1);
-  height: 100vh;
+  min-height: 100vh;
+  height: 100%;
   position: relative;
 
 
